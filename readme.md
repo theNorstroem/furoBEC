@@ -16,6 +16,10 @@ Command mode
 
     docker run -it --rm -v `pwd`:/specs spectools build
 
+## Build the container
+
+    docker build . -t spectools
+
 ## Mountpoints
 
 ## Installed Tools
