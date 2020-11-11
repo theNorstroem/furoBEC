@@ -6,21 +6,17 @@ This container contains all tools you need to work with a furo spec project.
 
 ## Usage
 Bash mode
-
-    docker run -it --rm -v `pwd`:/specs spectools 
+    docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec
     # do your stuff
     # type exit to quit
     exit
 
 Command mode
 
-    docker run -it --rm -v `pwd`:/specs spectools build
+    docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build
+
 
 > TIPP: If your spectools commands have to access different directories, do not forget to mount them.
-
-## Build the container
-
-    docker build . -t spectools
 
 
 ## Installed Tools
@@ -44,7 +40,7 @@ Make settings for your project in this file. Maybe you need a $GOPRIVATE or othe
 The `.furobecrc` is runned when you start the container.
 
     # change the bash prompt
-    PS1="フロー spectest#"
+    PS1="フロー my project#"
     GOPRIVATE=git.companybitbucket.com/projects
 
 
