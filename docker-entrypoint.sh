@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # exit when any command fails
 set -e
-cd /project
+cd /specs
 
 # set name of bash
 export PS1="フロー BEC #"

@@ -2,7 +2,7 @@
 
 # change the bash prompt
 PS1="フロー myProject#"
-
+GOPRIVATE="$GOPRIVATE,github.com/myprivaterepo"
 #echo '[url "ssh://git@github.com/"]
 #        insteadOf = https://github.com/' > ~/.gitconfig
 

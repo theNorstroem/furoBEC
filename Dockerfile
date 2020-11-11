@@ -11,7 +11,7 @@ ENV GOBIN $GOPATH/bin
 ENV PATH="$PATH:$GOPATH/bin"
 ENV PATH="/usr/local/sbin:$PATH"
 ENV PS1="\e[0;34mフロー BEC \t# \e[m "
-#ENV GOPRIVATE=github.com/theNorstroem,github.com/veith
+ENV GOPRIVATE=github.com/theNorstroem
 
 RUN apk add --no-cache bash git curl wget ca-certificates openssh
 
@@ -38,7 +38,7 @@ RUN set -eux; \
     rm -rf /go/pkg; \
     rm -rf /root/.cache/*
 
-WORKDIR /project/
+WORKDIR /specs/
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["bash"]

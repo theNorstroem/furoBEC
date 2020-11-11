@@ -7,14 +7,16 @@ This container contains all tools you need to work with a furo spec project.
 ## Usage
 Bash mode
 
-    docker run -it --rm -v `pwd`:/project spectools 
+    docker run -it --rm -v `pwd`:/specs spectools 
     # do your stuff
     # type exit to quit
     exit
 
 Command mode
 
-    docker run -it --rm -v `pwd`:/project spectools build
+    docker run -it --rm -v `pwd`:/specs spectools build
+
+## Mountpoints
 
 ## Installed Tools
 Please look at the dockerfile if you are interested in the versions.
@@ -47,5 +49,5 @@ The `.furobecrc` is runned when you start the container.
 
 - build
   > Will start the `spectools run build` command end exit.
-  > Make sure that you have a `build` flow in your `.spectools`
+  > Make sure that you have a `build` flow in your `.spectools` config
   
