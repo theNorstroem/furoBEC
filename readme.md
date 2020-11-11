@@ -16,11 +16,12 @@ Command mode
 
     docker run -it --rm -v `pwd`:/specs spectools build
 
+> TIPP: If your spectools commands have to access different directories, do not forget to mount them.
+
 ## Build the container
 
     docker build . -t spectools
 
-## Mountpoints
 
 ## Installed Tools
 Please look at the dockerfile if you are interested in the versions.
