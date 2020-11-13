@@ -7,13 +7,14 @@ ENV GEN_GO_VERSION=1.25.0
 ENV GEN_GO_GRPC_VERSION=1.0.0
 ENV SIMPLEGENERATOR_VERSION=1.0.1
 ENV FUROC_VERSION=0.3.0
+ENV YQ_VERSION=3.4.1
 ENV GOBIN $GOPATH/bin
 ENV PATH="$PATH:$GOPATH/bin"
 ENV PATH="/usr/local/sbin:$PATH"
 ENV PS1="\e[0;34mフロー BEC \t# \e[m "
 ENV GOPRIVATE=github.com/theNorstroem
 
-RUN apk add --no-cache bash git curl wget ca-certificates openssh
+RUN apk add --no-cache bash git curl wget ca-certificates openssh jq
 
 # install protoc
 RUN set -eux; \
@@ -34,7 +35,8 @@ RUN set -eux; \
        google.golang.org/grpc/cmd/protoc-gen-go-grpc@v$GEN_GO_GRPC_VERSION \
        github.com/theNorstroem/simple-generator@v$SIMPLEGENEREATOR_VERSION \
        github.com/theNorstroem/spectools@v$SPECTOOLS_VERSION \
-       github.com/theNorstroem/furoc@v$FUROC_VERSION;  \
+       github.com/theNorstroem/furoc@v$FUROC_VERSION  \
+       github.com/mikefarah/yq/v3@$YQ_VERSION; \
     rm -rf /go/pkg; \
     rm -rf /root/.cache/*
 

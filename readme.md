@@ -33,6 +33,9 @@ Please look at the dockerfile if you are interested in the versions.
 - spectools
 - furoc
 
+- [jq](https://stedolan.github.io/jq/)
+- [yq](https://mikefarah.gitbook.io/yq/commands/read)
+
 > No furoc generators are installed. Add the needed furoc-gen-XXX to the `.furobecrc` file.
 
 ## .furobecrc
