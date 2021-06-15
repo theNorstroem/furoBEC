@@ -1,17 +1,19 @@
 FROM golang:1.15.3-alpine3.12
 
 ENV SIMPLEGENEREATOR_VERSION=1.0.1
-ENV SPECTOOLS_VERSION=1.24.2
+ENV SPECTOOLS_VERSION=1.26.1
 ENV GATEWAY_VERSION=2.3.0
 ENV GEN_GO_VERSION=1.26.0
 ENV GEN_GO_GRPC_VERSION=1.0.0
-ENV FUROC_VERSION=0.5.1
+ENV FUROC_VERSION=0.6.0
 ENV YQ_VERSION=3.4.1
+ENV BUF_VERSION=0.41.0
 ENV GOBIN $GOPATH/bin
 ENV PATH="$PATH:$GOPATH/bin"
 ENV PATH="/usr/local/sbin:$PATH"
 ENV PS1="\e[0;34mフロー BEC \t# \e[m "
 ENV GOPRIVATE=github.com/theNorstroem
+
 
 RUN apk add --no-cache bash git curl wget ca-certificates openssh jq
 
@@ -38,6 +40,13 @@ RUN set -eux; \
        github.com/mikefarah/yq/v3@$YQ_VERSION; \
     rm -rf /go/pkg; \
     rm -rf /root/.cache/*
+
+# install buf tools
+RUN set -eux; \
+    curl -sSL \
+        "https://github.com/bufbuild/buf/releases/download/v${BUF_VERSION}/buf-$(uname -s)-$(uname -m)" \
+        -o "/usr/local/bin/buf" && \
+    chmod +x "/usr/local/bin/buf"
 
 WORKDIR /specs/
 COPY docker-entrypoint.sh /usr/local/bin/
