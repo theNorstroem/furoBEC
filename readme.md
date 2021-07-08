@@ -16,7 +16,7 @@ Command mode
     docker run -it --rm -v `pwd`:/specs thenorstroem/furo-bec build
 
 
-> TIPP: If your spectools commands have to access different directories, do not forget to mount them.
+> TIPP: If your furo commands have to access different directories, do not forget to mount them.
 
 
 ## Installed Tools
@@ -30,7 +30,7 @@ Please look at the dockerfile if you are interested in the versions.
 - protoc-gen-go
 - protoc-gen-go-grpc
 - simple-generator
-- spectools
+- furo
 - furoc
 
 - [jq](https://stedolan.github.io/jq/)
@@ -52,6 +52,6 @@ The `.furobecrc` is runned when you start the container.
   > will start a bash
 
 - build
-  > Will start the `spectools run build` command end exit.
-  > Make sure that you have a `build` flow in your `.spectools` config
+  > Will start the `furo run build` command end exit.
+  > Make sure that you have a `build` flow in your `.furo` config
   

@@ -15,11 +15,11 @@ fi
 
 
 if [ "$1" = 'build' ]; then
-  spectools run build
+  furo run build
 fi
 
 if [ "$1" = 'publish' ]; then
-  spectools run publish
+  furo run publish
 fi
 
 
