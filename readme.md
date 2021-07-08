@@ -1,3 +1,5 @@
+> MOVED TO https://github.com/eclipse/eclipsefuro
+
 # フロー furoBEC
 
 #### The furo build essentials container.
